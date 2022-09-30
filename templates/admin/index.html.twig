@@ -3,18 +3,8 @@
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/ssouh/Desktop/bibliotheque_Symfony/bibliotheque/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/ssouh/Desktop/bibliotheque_Symfony/bibliotheque/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
-</div>
+{# <button class="btn btn-danger"><a href="{{path('ajoutlivre')}}" target="_blank" rel="noopener noreferrer">Ajouter un
+        livre </a></button>
+<button class="btn btn-success"><a href="{{path('modifierLivre', {'id':livre.id})}}" target="_blank">Modifier les informations du livre</a></button>
+<button class="btn btn-light"><a href="#" target="_blank"> supprimer les informations du livre</a></button> #}
 {% endblock %}

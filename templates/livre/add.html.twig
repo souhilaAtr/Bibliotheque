@@ -5,7 +5,11 @@
 <div class= "forinscription">
 {{form_start(formulairelivre)}}
 {{form_widget(formulairelivre)}}
-<button type="submit" class="btn btn-danger"> ajout livre </button>
+{% if mode %}
+<button type="submit" class="btn btn-danger"> modifier les information du livre </button>
+{% else %}
+<button type="submit" class="btn btn-danger"> ajouter un livre </button>
+{% endif %}
 {{form_end(formulairelivre)}}
 </div>
 {% endblock %}

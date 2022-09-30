@@ -3,6 +3,10 @@
 {% block title %}l'ensemble des livres{% endblock %}
 
 {% block body %}
+{% if is_granted("ROLE_ADMIN") %}
+<button class="btn btn-danger"><a href="{{path('ajoutlivre')}}" target="_blank" rel="noopener noreferrer">Ajouter un
+        livre </a></button>
+{% endif %}
 {% for livre in livres %}
 <div class="forinscription  ">
 <div class="card text-white bg-warning mb-3" style="max-width: 40rem;">
@@ -14,7 +18,13 @@
         <p class="card-text"> Résumé :Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
     </div>
+    {% if is_granted("ROLE_ADMIN") %}
+    <button class="btn btn-success"><a href="{{path('modifierLivre', {'id':livre.id})}}" target="_blank">Modifier les
+            informations du livre</a></button>
+    <button class="btn btn-light"><a href="#" target="_blank"> supprimer les informations du livre</a></button>
+    {% endif %}
 </div>
+
 </div>
 {% endfor %}
 {% endblock %}

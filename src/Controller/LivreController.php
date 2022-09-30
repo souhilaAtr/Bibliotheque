@@ -30,12 +30,15 @@ class LivreController extends AbstractController
     }
 
     /**
+     * @Route("/modifierLivre/{id}", name="modifierLivre")
      * @Route("/ajoutLivre",name="ajoutlivre")
      */
-    public function add(ManagerRegistry $doctrine, Request $reqesut, UserInterface $user)
+    public function add(ManagerRegistry $doctrine, Request $reqesut, UserInterface $user, Livre $livre=null)
     {
-
-        $livre = new Livre();
+        if(!$livre){
+            $livre = new Livre();
+        }
+       
 
         $form = $this->createForm(LivreType::class, $livre);
         $form->handleRequest($reqesut);
@@ -46,8 +49,12 @@ class LivreController extends AbstractController
             $om->flush();
             return $this->redirectToRoute("livres");
         }
+        
         return $this->render('livre/add.html.twig', [
-            "formulairelivre" => $form->createView()
+            
+            "formulairelivre" => $form->createView(),
+             
         ]);
     }
+
 }

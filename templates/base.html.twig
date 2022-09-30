@@ -40,6 +40,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{path('ajoutlivre')}}">Ajout d'un livre</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{path('livres')}}">Afficher les livres</a>
                     </li>
                     {% if app.user %}
@@ -51,21 +54,19 @@
                                 Profil</a>
                             <div class="dropdown-menu">
 
-                                    {% if is_granted("ROLE_ADMIN")%}
-                                   
-                                        <a class="nav-link" href="{{path('app_admin')}}">Admin(private acess)</a>                                   
-                                   
-                                    {% endif %}
+                                {% if is_granted("ROLE_ADMIN")%}
+
+                                <a class="nav-link" href="{{path('app_admin')}}">Admin(private acess)</a>
+                                <div class="dropdown-divider"></div>
+                                {% endif %}
 
                                 <a class="dropdown-item" href="{{path('app_logout')}}">Deconnexion</a>
-                                
+
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
+
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{path('ajoutlivre')}}">Ajout d'un livre</a>
-                        </li>
+
                     </ul>
 
                     {% else %}
@@ -76,8 +77,8 @@
                     {% endif %}
 
 
-                   
-                   
+
+
 
                 </ul>
 
