@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    
+<div class= "forinscription">
+{{form_start(formulairelivre)}}
+{{form_widget(formulairelivre)}}
+<button type="submit" class="btn btn-danger"> ajout livre </button>
+{{form_end(formulairelivre)}}
+</div>
+{% endblock %}

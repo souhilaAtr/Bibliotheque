@@ -1,0 +1,84 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="forinscription">
+    {{form_start(formulaireinscription)}}
+
+    {# nom #}
+    <div class="form-group">
+        {{ form_label(formulaireinscription.nom, 'Nom', {'label_attr': {'class': 'form-label mt-4'}}) }}
+        {{form_widget (formulaireinscription.nom,{'attr':{"class":"form-control"}})}}
+
+    </div>
+    {# prenom #}
+
+    <div class="form-group">
+        {{ form_label(formulaireinscription.prenom, 'Prenom', {'label_attr': {'class': 'form-label mt-4'}}) }}
+        {{form_widget (formulaireinscription.prenom,{'attr':{"class":"form-control"}})}}
+
+    </div>
+    {# date #}
+    <i class="fa fa-calendar"></i>
+    <div class="form-group">
+        {{ form_label(formulaireinscription.birthDate, 'Date', {'label_attr': {'class': 'form-label'}}) }}
+        {{form_widget (formulaireinscription.birthDate,{'attr':{"class":"fa fa-calendar"}})}}
+
+    </div>
+    {# email #}
+
+    <div class="form-group">
+        {{ form_label(formulaireinscription.email, 'email', {'label_attr': {'class': 'form-label mt-4'}}) }}
+        {{form_widget (formulaireinscription.email,{'attr':{"class":"form-control"}})}}
+
+    </div>
+
+
+    {# password #}
+
+    <div class="form-group">
+        {{ form_label(formulaireinscription.password, 'mot de passe', {'label_attr': {'class': 'form-label mt-4'}}) }}
+        {{form_widget (formulaireinscription.password,{'attr':{"class":"form-control"}})}}
+
+    </div>
+    {# confirme password #}
+
+    <div class="form-group">
+        {{ form_label(formulaireinscription.confirmPassword, 'mot de passe', {'label_attr': {'class': 'form-label
+        mt-4'}}) }}
+        {{form_widget (formulaireinscription.confirmPassword,{'attr':{"class":"form-control"}})}}
+
+    </div>
+
+    {# adresse #}
+    
+    <div class="form-group">
+        {{ form_label(formulaireinscription.adresse, 'Adresse', {'label_attr': {'class': 'form-label mt-4'}}) }}
+        {{form_widget (formulaireinscription.adresse,{'attr':{"class":"form-control"}})}}
+    
+    </div>
+{# code postal #}
+
+<div class="form-group">
+    {{ form_label(formulaireinscription.codeP, 'code Postal', {'label_attr': {'class': 'form-label mt-4'}}) }}
+    {{form_widget (formulaireinscription.codeP,{'attr':{"class":"form-control"}})}}
+
+</div>
+{# avatar #}
+
+
+
+<div class="form-group">
+    {{ form_label(formulaireinscription.avatar, 'photo de profil', {'label_attr': {'class': 'form-label mt-4'}}) }}
+    {{form_widget (formulaireinscription.avatar,{'attr':{"class":"form-control"}})}}
+
+</div>
+
+    {# {{form_widget(formulaireinscription)}} #}
+
+    <button type="submit" class="btn btn-danger"> Inscription </button>
+    {{form_end(formulaireinscription)}}
+    <button type="button" class="btn btn-link"><a href="{{path('app_login')}}">vous avez deja un compte </a></button>
+</div>
+
+
+{% endblock body %}

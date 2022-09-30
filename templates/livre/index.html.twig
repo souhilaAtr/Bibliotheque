@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}l'ensemble des livres{% endblock %}
+
+{% block body %}
+{% for livre in livres %}
+<div class="forinscription  ">
+<div class="card text-white bg-warning mb-3" style="max-width: 40rem;">
+    <div class="card-header">Information du livre {{livre.titre}}</div>
+    <div class="card-body">
+        <h4 class="card-title">le titre est : {{livre.titre}}</h4>
+        <h4 class="card-title">auteur du livre : {{livre.auteur}}</h4>
+        <p>date de sortie {{livre.dateSortie|date("d-M-Y")}}</p>
+        <p class="card-text"> Résumé :Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+    </div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}
