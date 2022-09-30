@@ -59,5 +59,14 @@ class LivreController extends AbstractController
                 "mode" =>$mode
         ]);
     }
+    /**
+     * @Route("/removelivre/{id}",name="removelivre")
+     */
+    public function remove(ManagerRegistry $doctrine, Livre $livre){
+        $om = $doctrine->getManager();
+        $om->remove($livre);
+        $om->flush();
+        return $this->redirectToRoute("livres");
+    }
 
 }
