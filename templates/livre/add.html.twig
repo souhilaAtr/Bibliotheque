@@ -1,15 +1,15 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    
-<div class= "forinscription">
-{{form_start(formulairelivre)}}
-{{form_widget(formulairelivre)}}
-{% if mode %}
-<button type="submit" class="btn btn-danger"> modifier les information du livre </button>
-{% else %}
-<button type="submit" class="btn btn-danger"> ajouter un livre </button>
-{% endif %}
-{{form_end(formulairelivre)}}
+
+<div class="forinscription">
+    {{form_start(formulairelivre)}}
+    {{form_widget(formulairelivre)}}
+    {% if mode != null %}
+    <button type="submit" class="btn btn-danger"> modifier les information du livre </button>
+    {% else %}
+    <button type="submit" class="btn btn-danger"> ajouter un livre </button>
+    {% endif %}
+    {{form_end(formulairelivre)}}
 </div>
 {% endblock %}

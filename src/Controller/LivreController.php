@@ -49,11 +49,14 @@ class LivreController extends AbstractController
             $om->flush();
             return $this->redirectToRoute("livres");
         }
-        
+        $mode = false;
+        if($livre->getId() != null){
+            $mode = true;
+        }
         return $this->render('livre/add.html.twig', [
             
             "formulairelivre" => $form->createView(),
-             
+                "mode" =>$mode
         ]);
     }
 
